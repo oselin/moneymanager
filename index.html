@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content = "width = device-width, initial-scale = 1.0, minimum-scale = 1, maximum-scale = 1, user-scalable = no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" href="media/icon.png">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <meta name="apple-mobile-web-app-title" content="Manager" />
+    <link href="splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphonexr_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/iphonexsmax_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/ipad_splash.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/ipadpro1_splash.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/ipadpro3_splash.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="splashscreens/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    
+  </head>
+
+  <body>
+    <div id = "firstpage">
+    
+      <div class="importo">
+        <p class="importo">IMPORTO:<p>
+        <input type="number" class="importo" id="importo" inputmode="decimal" step="0.01"/>
+      </div>
+      
+      <div class="causale">
+        <p class="causale">CATEGORIA:<p>
+        <select class="causale" id="causale">
+          <option value=1>SPESA</option>
+          <option value=2>BAR E VITA SOCIALE</option>
+          <option value=3>MENSA</option>
+          <option value=4>REGALO</option>
+          <option value=5>TRASPORTI</option>
+          <option value=6>PERSONALE</option>
+          <option value=7>ALTRO</option>
+        </select>
+        
+        <br>
+      </div>
+      
+      <div class="date">
+        <p class="date">DATA:<p>
+        <input type="date" id="demo" class="date" value=""/><br>
+      </div>
+      
+      <div class="tipo">
+        <p class="tipo">CONTO:</p>
+        <input type="button" class="tipo" onclick="changePayment()" value="CONTANTI"  id="conto"/><br>
+      </div>
+      
+      <div class="fondo">
+        <input type="button" onclick="sendData()" value="INVIA"  id="invio"/>
+      </div>
+
+      
+    </div>
+
+    <div id = "secondpage">
+        <table id='tab'></table>
+    </div>
+    <div id = "thirdpage"></div>
+    <div class="navigation_bar">
+        <table class = "navigation_bar">
+            <tr>
+                <td><img id ="first" src="media/bill.png" alt="" width=30% onclick="changePage(this)" style="opacity:1;"></img></td>
+                <td><img id="second" src="media/income.png" alt="" width=30% onclick="changePage(this)" style="opacity:0.5;"></img></td>
+                <td><img id="third" src="media/clock.png" alt="" width=30% onclick="changePage(this)" style="opacity:0.5;"></img></td>
+            </tr>
+
+        </table>
+    </div>
+
+    
+
+    <script src="code.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type ="text/javascript">
+      firebase.initializeApp(config);
+      firebase.analytics();
+      var firestore = firebase.firestore();
+
+    </script>
+  </body>
+</html>
+
+
